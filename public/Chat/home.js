@@ -7,19 +7,19 @@ const sendgrouoMessage = document.getElementById("send-group-message");
 const commonGroupButton = document.getElementById("common-group-button");
 
 const baseURL = `http://localhost:3001`;
-const socket = io("http://localhost:3000");
+const socket = io("http://localhost:3000");//url of the server
 let clickedCommonGroupButton = false;
 const editButton = document.getElementById("edit");
 
 // const socket = io(window.location.origin);
 
-socket.on("connect", () => {
-  socket.on("common-chat", () => {
-    showOnscreenChats();
+socket.on("connect", () => {//Sets up an event listener on the socket object to listen for the "connect" event.This event is triggered when the client successfully connects to the server.when connected,callback func exe
+  socket.on("common-chat", () => {//within the "connect" event listener, this sets up another event listener on the socket object to listen for the "common-chat" event.When the "common-chat" event is received, the provided callback function is executed.
+    showOnscreenChats();//Calls the showOnscreenChats function when the "common-chat" event is triggered.display chat messages on the screen.
   });
 
   socket.on("group-message", (groupId) => {
-    startgroupchatContent(groupId);
+    startgroupchatContent(groupId);//his function likely starts or updates the content of a group chat associated with the specified groupId.
   });
 });
 

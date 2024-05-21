@@ -25,6 +25,7 @@ const app = express();
 
 app.use(cors({
     origin: "*",    
+
 }));
 app.use(bodyParser.json())
 
@@ -42,8 +43,6 @@ GroupMember.belongsTo(User)
 
 Groups.hasMany(GroupMember)
 GroupMember.belongsTo(Groups)
-
-
 
 sequelize.sync()
 .then(()=>{
