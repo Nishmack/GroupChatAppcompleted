@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 const sequelize = require('../util/database');
 
 
-const Groups = sequelize.define('groups',{
+const Group = sequelize.define('group',{
     groupname: {
         type: Sequelize.STRING,
         allowNull: false    
@@ -18,4 +18,4 @@ const Groups = sequelize.define('groups',{
 })
 
 
-module.exports = Groups;
+module.exports = Group;

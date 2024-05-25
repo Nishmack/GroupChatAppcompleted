@@ -1,8 +1,7 @@
 const { CronJob } = require('cron');
-const  Op = require('sequelize');
 const Sequelize = require('sequelize');
 
-const sequelize = require('../util/database');
+
 const Content = require('../models/content');
 const Archived = require('../models/archivedchat');
 const GroupChat = require('../models/groupchat');
